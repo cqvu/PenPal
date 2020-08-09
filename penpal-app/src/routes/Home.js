@@ -55,16 +55,15 @@ class Home extends React.Component {
                     this.state.showMonitor ? 
                     <div>
                         <img className="monitorLarge" id="monitorLarge" src={monitorLarge}></img>
-                        <img className="iconPencil" id="iconPencil" src={iconPencil}></img>
-                        <img className="iconMail" id="iconMail" src={iconMail}></img>
+                        <img className="iconPencil" id="iconPencil" src={iconPencil} onClick={this.mailEditorOpen}></img>
+                        <img className="iconMail" id="iconMail" src={iconMail} onClick={this.mailListOpen}></img>
                         <img className="iconCal" id="iconCal" src={iconCal}></img>
-                        {/* <img className="monitorLarge" id="writeMail" src={test} onClick={this.mailEditorOpen} variant="primary">Test MailEditor</img> */}
                     </div>
                     : null
-                } */}
+                }
                 
                 <MailEditor editorOpen={this.state.editorOpen} handleClose={this.mailEditorClose}></MailEditor>
-                <MailList></MailList>
+                <MailList mailListOpen={this.state.listOpen} handleClose={this.mailListClose}></MailList>
             </div>
         )
     }

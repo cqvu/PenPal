@@ -211,7 +211,10 @@ class MailEditor extends React.Component {
         const blocks = convertToRaw(this.state.editorState.getCurrentContent()).blocks;
         const value = blocks.map(block => (!block.text.trim() && '\n') || block.text).join('\n');
         console.log(value)
+        // send to Firebase
+        this.setEditorState(EditorState.createEmpty());
     }
+
     render() {
         const {editorOpen, handleClose} = this.props;
         return(
