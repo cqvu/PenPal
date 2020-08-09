@@ -22,7 +22,8 @@ class Home extends React.Component {
             modalOpen: false,
             editorOpen: false,
             listOpen: false,
-            showMonitor: false
+            showMonitor: false,
+            surveyOpen: false
         }
     }
 
@@ -47,9 +48,13 @@ class Home extends React.Component {
     }
 
     openSurvey = () => {
-        this.setState({surveyOpen: false})
+      //  console.log("Hello");
+        this.setState({surveyOpen: true})
     }
 
+    closeSurvey = () => {
+        this.setState({surveyOpen: false})
+    }
     render() {
         return (
             <div>
@@ -61,7 +66,7 @@ class Home extends React.Component {
                         <img className="monitorLarge" id="monitorLarge" src={monitorLarge}></img>
                         <img className="iconPencil" id="iconPencil" src={iconPencil}></img>
                         <img className="iconMail" id="iconMail" src={iconMail}></img>
-                        <img className="iconCal" id="iconCal" src={iconCal}></img>
+                        <img className="iconCal" id="iconCal" src={iconCal} onClick={this.openSurvey}></img>
                         {/* <img className="monitorLarge" id="writeMail" src={test} onClick={this.mailEditorOpen} variant="primary">Test MailEditor</img> */}
                     </div>
                     : null
@@ -70,7 +75,7 @@ class Home extends React.Component {
                 {/* <MailEditor editorOpen={this.state.editorOpen} handleClose={this.mailEditorClose}></MailEditor>
                  <MailList></MailList>  */}
             
-                 <MatchingSurvey></MatchingSurvey>
+                 <MatchingSurvey modalOpen={this.state.surveyOpen} handleClose={this.closeSurvey}></MatchingSurvey>
                
             </div>
         )

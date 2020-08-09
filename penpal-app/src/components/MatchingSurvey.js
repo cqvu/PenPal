@@ -23,6 +23,7 @@ class MatchingSurvey extends React.Component {
                 <Dialog
                     className="mailModal"
                     open={modalOpen}
+                    onClose={handleClose}
                     PaperProps={{
                         style: {
                           backgroundColor: 'black',
