@@ -1,4 +1,4 @@
-# PenPal
+# Cosmic Connection
 For Spectra 4.0
 
 ## Project Demo
