@@ -1,3 +1,5 @@
+import firebase from "../penpal-app/src/components/firebase";
+
 const express = require('express');
 const cors = require('cors');
 
@@ -21,6 +23,7 @@ const functions = require('firebase-functions');
 //     console.log(body);
 //     res.send(usrResponse.create();
 // });
+
 
 exports.usrResponse = functions.https.onRequest((req, res) => {
     var body = req.body;
