@@ -5,7 +5,7 @@ For Spectra 4.0
 https://www.youtube.com/watch?v=0yu-UhFvH3k
 
 ## Project Pitch
-https://youtu.be/aIzT2oIGUdM (edited) 
+https://youtu.be/aIzT2oIGUdM
 
 ## How to Install and Run
 ```
@@ -16,10 +16,10 @@ npm start
 
 ## Demo Steps
 1. Sign up for an account or sign in using the following credentials
-
+```
 Email Address: final@test.com
-
 Password: finals
+```
 
 2. Click on the monitor on the home page to show the main interactions
 3. Three options to explore:
