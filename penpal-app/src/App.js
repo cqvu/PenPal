@@ -1,8 +1,8 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-import SignIn from "./components/SignIn";
-import CreateAccount from "./components/CreateAccount";
-import Home from "./components/Home";
+import SignIn from "./routes/SignIn";
+import CreateAccount from "./routes/CreateAccount";
+import Home from "./routes/Home";
 import logo from './logo.svg';
 import './App.css';
 
