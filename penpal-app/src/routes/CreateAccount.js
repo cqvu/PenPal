@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import firebase from "./firebase";
+import firebase from "../components/firebase";
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -49,10 +49,6 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(3, 0, 2),
     },
 }));
-
-
-
-
 
 export default function CreateAccount(props) {
 

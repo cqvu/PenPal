@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import firebase from "./firebase";
+import firebase from "../components/firebase";
 import Avatar from '@material-ui/core/Avatar';
 import { BrowserRouter as Router } from 'react-router-dom'
 
