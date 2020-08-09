@@ -1,7 +1,7 @@
 .mailModal {
-    color: red
+    z-index: inherit;
 }
 
 #dialog-description {
-    color: white;
+    color: black;
 }

@@ -1,23 +1,26 @@
 import React from 'react'
 import MailModal from '../components/MailModal'
 import MailEditor from '../components/MailEditor';
+import MatchingSurvey from '../components/MatchingSurvey';
+import MailList from '../components/MailList';
+import Button from '@material-ui/core/Button';
 import firebase from "../components/firebase";
+import '../styles/Home.css'
+import background from '../images/CosmicConnectionsSpaceC.png'
+import controls from '../images/CosmicConnectionsControlsC.png'
+import monitor from '../images/CosmicConnectionsMonitorSmall.png'
+import monitorLarge from '../images/CosmicConnectionsMonitorLarge.png'
+import test from '../images/spectralogosolo.png'
 
 class Home extends React.Component {
     constructor() {
         super();
         this.state = {
             modalOpen: false,
-            editorOpen: false
+            editorOpen: false,
+            listOpen: false,
+            showMonitor: false
         }
-    }
-
-    mailModalOpen = () => {
-        this.setState({ modalOpen: true})
-    }
-
-    mailModalClose = () => {
-        this.setState({ modalOpen: false})
     }
 
     mailEditorOpen = () => {
@@ -28,14 +31,41 @@ class Home extends React.Component {
         this.setState({ editorOpen: false})
     }
 
+    mailListOpen = () => {
+        this.setState({ listOpen: true})
+    }
+
+    mailListClose = () => {
+        this.setState({ listOpen: false})
+    }
+
+    openMonitor = () => {
+        this.setState({showMonitor: true})
+    }
+
+    openSurvey = () => {
+        this.setState({surveyOpen: false})
+    }
 
     render() {
         return (
             <div>
-                <button onClick={this.mailModalOpen}>Test MailModal</button>
-                <button onClick={this.mailEditorOpen}>Test MailEditor</button>
-                <MailModal modalOpen={this.state.modalOpen} handleClose={this.mailModalClose}></MailModal>
-                <MailEditor editorOpen={this.state.editorOpen} handleClose={this.mailEditorClose}></MailEditor>
+                {/* <img className="bg" id="outside" src={background}></img>
+                <img className="bg" id="controls" src={controls}></img>
+                <img id="monitor" src={monitor} onClick={this.openMonitor}></img>
+                {
+                    this.state.showMonitor ? 
+                    <div>
+                        <img className="monitorLarge" id="monitorLarge" src={monitorLarge}></img>
+                    </div>
+                    : null
+                }
+                 */}
+                {/* <MailEditor editorOpen={this.state.editorOpen} handleClose={this.mailEditorClose}></MailEditor>
+                 <MailList></MailList>  */}
+            
+                 <MatchingSurvey></MatchingSurvey>
+               
             </div>
         )
     }
