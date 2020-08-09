@@ -15,31 +15,36 @@ const config = {
     appId: "1:972492506859:web:f559fd58522d15568160ae"
 };
 
-class Firebase{
+class Firebase {
 
-    constructor(){
+    constructor() {
 
         app.initializeApp(config)//Let config information initialize firebase
         //With this.auth and this.db variables we can access auth and firestore
-        this.auth=app.auth()
-        this.db=app.firestore()
+        this.auth = app.auth()
+        this.db = app.firestore()
     }
 
-    login(email,pass){
+    login(email, pass) {
         //firebase login function
-        return this.auth.signInWithEmailAndPassword(email,pass)
+        return this.auth.signInWithEmailAndPassword(email, pass)
     }
 
-    logout(){
+    logout() {
         //firebase logout function
         return this.auth.signOut()
     }
 
-     register(email,pass){
+
+    register(email, pass) {
         //firebase register function
-        return this.auth.createUserWithEmailAndPassword(email,pass)
+        return this.auth.createUserWithEmailAndPassword(email, pass)
     }
 
+
+    getCurrentEmail() {
+        return this.auth.currentUser.email;
+    }
 
 }
 

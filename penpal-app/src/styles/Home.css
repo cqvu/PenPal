@@ -1,0 +1,51 @@
+/* body {
+    background: url("../images/CosmicConnectionsHomePage.png") no-repeat center fixed;
+    transform: scale(0.95);
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+} */
+
+.bg {
+    position: fixed; 
+    width: 100%; 
+    height: 100%;
+}
+.bg img {
+    position: fixed; 
+    top: 0;
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: 0; 
+    min-width: 50%;
+    min-height: 50%;
+    z-index: -1;
+}
+
+#monitor {
+    position: fixed; 
+    left: 33%;
+    top: 45%;
+    z-index: 1;
+}
+#monitor:hover {
+    cursor: zoom-in;
+    transform: scale(1.05);
+}
+
+#monitorLarge {
+    left: 21%;
+    top: 10%;
+}
+
+.monitorLarge {
+    position: fixed;
+    z-index: 2;
+}
+
+.writeMail {
+    left: 50%;
+    top: 50%;
+}

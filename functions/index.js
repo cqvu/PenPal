@@ -1,5 +1,6 @@
 import firebase from "../penpal-app/src/components/firebase";
-
+const firebase = require( "../penpal-app/src/components/firebase");
+//const firebase = require('firebase');
 const express = require('express');
 const cors = require('cors');
 
@@ -23,15 +24,26 @@ const functions = require('firebase-functions');
 //     console.log(body);
 //     res.send(usrResponse.create();
 // });
-
-
+fbObject = new firebase();
+var db = fbObject.db;
 exports.usrResponse = functions.https.onRequest((req, res) => {
-    var body = req.body;
-    console.log(body);
-    res.json({
-        status: 200,
-        message: 'ok got it!'
-    });
+	var email = fbObject.getCurrentEmail;
+    var usrToken = req.body.form_response.token;
+    console.log(usrToken);
+    db.collection("Matches").doc(email).set({
+    	token: usrToken
+    })
+    .then(function(){
+    	console.log("Document written in Matches");
+    	res.json({
+	        status: 200,
+	        token: usrToken,
+	        message: 'ok got it!'
+	    });
+    })
+    .catch(function(error){
+    	console.error("Error in writing document to matches: ", error);
+    })
 });
 
 
