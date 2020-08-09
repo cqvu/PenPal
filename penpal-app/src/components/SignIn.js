@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import firebase from "./firebase";
 import Avatar from '@material-ui/core/Avatar';
 import { BrowserRouter as Router } from 'react-router-dom'
 
@@ -12,7 +13,6 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
-console.log("WOOT");
 const useStyles = makeStyles((theme) => ({
     root: {
         height: '100vh',
@@ -50,11 +50,28 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function SignIn() {
-    const classes = useStyles();
+export default function SignIn(props) {
 
-    function handleClick() {
-        console.log("Testing submit");
+    const classes = useStyles();
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+
+    function onSubmit(e){
+        e.preventDefault()//blocks the postback event of the page
+    }
+
+
+    async function onLogin(){
+        try {
+            //The login in the Firebase class is running with useState data.
+            await firebase.login(email,password)
+
+            //If there are no errors, they are redirected to the dashboard page.
+            props.history.replace('/home')
+        } catch (error) {
+            alert(error.message)
+        }
     }
         return (
         <Grid container component="main" className={classes.root}>
@@ -73,7 +90,7 @@ export default function SignIn() {
                     </Typography>
                     */}
 
-                     <form className={classes.form} >
+                     <form className={classes.form} onSubmit={onSubmit} >
                         <TextField
                             variant="outlined"
                             margin="normal"
@@ -84,6 +101,9 @@ export default function SignIn() {
                             name="email"
                             autoComplete="email"
                             autoFocus
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+
                         />
                         <TextField
                             variant="outlined"
@@ -95,6 +115,9 @@ export default function SignIn() {
                             type="password"
                             id="password"
                             autoComplete="current-password"
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
+
                         />
                         <Button
                             type="submit"
@@ -102,7 +125,7 @@ export default function SignIn() {
                             variant="contained"
                             color="primary"
                             className={classes.submit}
-                            onClick={handleClick()}
+                            onClick={onLogin}
                         >
                             Blast Off!
                         </Button>
@@ -111,8 +134,8 @@ export default function SignIn() {
 
                             </Grid>
                             <Grid item>
-                                <Link href="/user" variant="body2">
-                                    {"Don't have an account? Sign Up"}
+                                <Link href="/register" variant="body2">
+                                    {"Don't have an account? Sign Up. "}
                                 </Link>
                             </Grid>
                         </Grid>

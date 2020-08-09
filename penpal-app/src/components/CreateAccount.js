@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
+import firebase from "./firebase";
+
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -50,14 +52,39 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function CreateAccount() {
-    const classes = useStyles();
 
-    function onPress() {
-        return <Redirect to={ "/home"} />
+
+export default function CreateAccount(props) {
+
+    // const {history} = props;
+    const classes = useStyles();
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    function onSubmit(e){
+        e.preventDefault()//blocks the postback event of the page
 
     }
 
+    async function onRegister(){
+
+        try{
+            //The register in the Firebase class is running with useState data.
+            await firebase.register(email,password)
+
+            //If there are no errors, they are redirected to the dashboard page.
+            console.log("We authenticated bois");
+            props.history.replace("/home");
+            // this.push('/home');
+            // return <Redirect to={"/home"} />
+           //  <Link to="/home"></Link>;
+
+            // history.replace('/home')
+        }catch(err){
+            //create an alert instantly error
+            alert(err.message)
+        }
+    }
     return (
         <Grid container component="main" className={classes.root}>
             <CssBaseline />
@@ -72,7 +99,7 @@ export default function CreateAccount() {
                         Sign Up
                     </Typography>
                     */}
-                    <form className={classes.form} >
+                    <form className={classes.form} onSubmit={onSubmit} >
                         <TextField
                             variant="outlined"
                             margin="normal"
@@ -82,6 +109,8 @@ export default function CreateAccount() {
                             label="Email Address"
                             name="email"
                             autoComplete="email"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
                             autoFocus
                         />
                         <TextField
@@ -94,17 +123,21 @@ export default function CreateAccount() {
                             type="password"
                             id="password"
                             autoComplete="current-password"
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
                         />
+                        <Router>
                         <Button
                             type="submit"
                             fullWidth
                             variant="contained"
                             color="primary"
                             className={classes.submit}
-                            onClick={onPress()}
+                            onClick={onRegister}
                         >
                             Sign Up
                         </Button>
+                        </Router>
                     </form>
                 </div>
             </Grid>
