@@ -1,31 +1,40 @@
 import React from 'react'
 import MailModal from '../components/MailModal'
+import MailEditor from '../components/MailEditor';
 
 class Home extends React.Component {
     constructor() {
         super();
         this.state = {
-            modalOpen: false
+            modalOpen: false,
+            editorOpen: false
         }
     }
 
-    handleOpen = () => {
+    mailModalOpen = () => {
         this.setState({ modalOpen: true})
     }
 
-    handleClose = () => {
+    mailModalClose = () => {
         this.setState({ modalOpen: false})
     }
 
-    // modalBody = (
-    //     <div style={modalStyle}
-    // )
+    mailEditorOpen = () => {
+        this.setState({ editorOpen: true})
+    }
+
+    mailEditorClose = () => {
+        this.setState({ editorOpen: false})
+    }
+
 
     render() {
         return (
             <div>
-                <button onClick={this.handleOpen}>Test</button>
-                <MailModal modalOpen={this.state.modalOpen} handleClose={this.handleClose}></MailModal>
+                <button onClick={this.mailModalOpen}>Test MailModal</button>
+                <button onClick={this.mailEditorOpen}>Test MailEditor</button>
+                <MailModal modalOpen={this.state.modalOpen} handleClose={this.mailModalClose}></MailModal>
+                <MailEditor editorOpen={this.state.editorOpen} handleClose={this.mailEditorClose}></MailEditor>
             </div>
         )
     }
