@@ -21,12 +21,12 @@ const functions = require('firebase-functions');
 //     console.log(body);
 //     res.send(usrResponse.create();
 // });
-
 exports.usrResponse = functions.https.onRequest((req, res) => {
-    var body = req.body;
-    console.log(body);
+    var usrToken = req.body.form_response.token;
+    console.log(usrToken);
     res.json({
         status: 200,
+        token: usrToken,
         message: 'ok got it!'
     });
 });
