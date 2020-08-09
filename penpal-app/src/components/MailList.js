@@ -1,5 +1,6 @@
 import React from 'react'
 import MailModal from '../components/MailModal'
+import firebase from "../components/firebase";
 import '../styles/MailList.css'
 
 class MailList extends React.Component {
@@ -9,15 +10,22 @@ class MailList extends React.Component {
         this.state = {
             mailList : [
                 {"date": "Monday Aug 6", "text": "Hello"},
-                {"date": "Tuesday Aug 7", "text": "Hello again"},
+                {"date": "Tuesday Aug 7", "text": "Hello againnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn\nMy name is Anon Alien"},
                 {"date": "Wed Aug 8", "text": "Bye"}
             ],
-            modalOpen : false
+            modalOpen : false,
+            openMail : {}
         }
     }
+    
+    // componentDidMount() {
+    //     firebase.auth() {
 
-    mailModalOpen = () => {
-        this.setState({ modalOpen: true})
+    //     }
+    // }
+
+    mailModalOpen = (mail) => {
+        this.setState({ modalOpen: true, openMail: mail })
     }
 
     mailModalClose = () => {
@@ -29,10 +37,10 @@ class MailList extends React.Component {
             <div>
                 <div className="mailListContainer">
                     {this.state.mailList.map((mail, index) => 
-                        <MailEntry mail={mail} index={index+1} handleClick={this.mailModalOpen}></MailEntry>
+                        <MailEntry mail={mail} index={index+1} handleClick={ () => this.mailModalOpen(mail)}></MailEntry>
                     )}
                 </div>
-                <MailModal modalOpen={this.state.modalOpen} handleClose={this.mailModalClose}></MailModal>
+                <MailModal mail={this.state.openMail} modalOpen={this.state.modalOpen} handleClose={this.mailModalClose}></MailModal>
             </div>
         )
     }

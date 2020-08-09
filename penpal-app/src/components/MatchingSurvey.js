@@ -4,7 +4,6 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import { ReactTypeformEmbed } from 'react-typeform-embed';
 import Button from '@material-ui/core/Button';
-import Browser from '../images/Browser.png'
 import '../styles/MailModal.css';
 
 class MailModal extends React.Component {
@@ -22,29 +21,19 @@ class MailModal extends React.Component {
         return (
             <div>
                 <Dialog
-                    fullWidth={true}
-                    maxWidth = {'md'}
                     className="mailModal"
                     open={modalOpen}
                     onClose={handleClose}
-                    BackdropProps={{
-                        style: {
-                            backgroundColor: 'transparent',
-                            boxShadow: 'none',
-                        }
-                    }}
                     PaperProps={{
                         style: {
-                          backgroundColor: 'transparent',
+                          backgroundColor: 'black',
                           boxShadow: 'none',
+                          width: '100vw',
+                          height: '50vh'
                         },
                       }}>
-                        <img src={Browser} width='70%' ></img>
-                        <DialogContent style={{backgroundColor:'transparent', position:'fixed', 
-                                                top:'41%', left:'32%', maxWidth:'22%', height:'22%'}}>
-                        <DialogContentText  id="dialog-description">
-                            {mail.text}
-                        </DialogContentText>
+                        <DialogContent>
+                            { this.state.isMatchDay ? <ReactTypeformEmbed url="https://vyl003.typeform.com/to/CJ2irtPt" /> : null }
                     </DialogContent>            
                 </Dialog>
             </div>

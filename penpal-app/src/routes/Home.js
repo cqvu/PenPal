@@ -46,17 +46,16 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                <img className="bg" id="outside" src={background}></img>
+                {/* <img className="bg" id="outside" src={background}></img>
                 <img className="bg" id="controls" src={controls}></img>
                 <img id="monitor" src={monitor} onClick={this.openMonitor}></img>
                 {
                     this.state.showMonitor ? 
                     <div>
                         <img className="monitorLarge" id="monitorLarge" src={monitorLarge}></img>
-                        {/* <img className="monitorLarge" id="writeMail" src={test} onClick={this.mailEditorOpen} variant="primary">Test MailEditor</img> */}
                     </div>
                     : null
-                }
+                } */}
                 
                 <MailEditor editorOpen={this.state.editorOpen} handleClose={this.mailEditorClose}></MailEditor>
                 <MailList></MailList>
