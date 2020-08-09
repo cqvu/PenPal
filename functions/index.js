@@ -1,4 +1,4 @@
-import firebase from "../penpal-app/src/components/firebase";
+//import firebase from "../penpal-app/src/components/firebase";
 const firebase = require( "../penpal-app/src/components/firebase");
 //const firebase = require('firebase');
 const express = require('express');
