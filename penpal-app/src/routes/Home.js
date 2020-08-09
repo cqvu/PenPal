@@ -61,7 +61,7 @@ class Home extends React.Component {
                         {/* <img className="monitorLarge" id="writeMail" src={test} onClick={this.mailEditorOpen} variant="primary">Test MailEditor</img> */}
                     </div>
                     : null
-                }
+                } */}
                 
                 <MailEditor editorOpen={this.state.editorOpen} handleClose={this.mailEditorClose}></MailEditor>
                 <MailList></MailList>
