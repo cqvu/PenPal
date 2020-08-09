@@ -37,6 +37,7 @@ class MailModal extends React.Component {
                         style: {
                           backgroundColor: 'transparent',
                           boxShadow: 'none',
+                            left: '12%'
                         },
                       }}>
                         <img src={Browser} width='70%' ></img>

@@ -1,6 +1,9 @@
 .mailListContainer {
     display: flex;
     flex-direction: column;
+    left:39%;
+    top:55%;
+    position: fixed;
 }
 
 .mailEntry {

@@ -10,9 +10,9 @@ import background from '../images/CosmicConnectionsHomePagewPlaque.png'
 import controls from '../images/CosmicConnectionsControlsC.png'
 import monitor from '../images/CosmicConnectionsMonitorSmall.png'
 import monitorLarge from '../images/CosmicConnectionsMonitorLarge.png'
-import iconMail from '../images/mail.png'
-import iconPencil from '../images/pencil.png'
-import iconCal from '../images/calendar.png'
+import iconMail from '../images/MailIcon.png'
+import iconPencil from '../images/WriteIcon.png'
+import iconCal from '../images/CalendarIcon.png'
 import test from '../images/spectralogosolo.png'
 
 class Home extends React.Component {
