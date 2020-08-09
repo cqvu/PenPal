@@ -11,9 +11,8 @@ function App() {
     return (
         <Router>
             <Route exact path="/" component={SignIn}/>
-            <Route path="/user" component={CreateAccount}/>
+            <Route path="/register" component={CreateAccount}/>
             <Route path="/home" component={Home}/>
-
         </Router>
     );
 }
