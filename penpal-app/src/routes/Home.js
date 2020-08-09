@@ -1,6 +1,7 @@
 import React from 'react'
 import MailModal from '../components/MailModal'
 import MailEditor from '../components/MailEditor';
+import firebase from "../components/firebase";
 
 class Home extends React.Component {
     constructor() {
