@@ -26,8 +26,8 @@
 
 #monitor {
     position: fixed; 
-    left: 33%;
-    top: 45%;
+    left: 22%;
+    top: 20%;
     z-index: 1;
 }
 #monitor:hover {
@@ -36,16 +36,39 @@
 }
 
 #monitorLarge {
-    left: 21%;
-    top: 10%;
+    position: fixed;
+    left: 14%;
+    top: 1%;
+
 }
 
 .monitorLarge {
     position: fixed;
-    z-index: 2;
+    z-index: 3;
+    height: 800px;
 }
 
-.writeMail {
-    left: 50%;
-    top: 50%;
+.iconMail {
+    height: 200px;
+    position: fixed;
+    z-index: 3;
+    left:42%;
+    top:35%;
+}
+
+.iconCal {
+    height: 220px;
+    position: fixed;
+    z-index: 3;
+    left:60%;
+    top:34%;
+}
+
+
+.iconPencil {
+    height: 150px;
+    position: fixed;
+    z-index: 3;
+    left:27%;
+    top:37%;
 }

@@ -6,10 +6,13 @@ import MailList from '../components/MailList';
 import Button from '@material-ui/core/Button';
 import firebase from "../components/firebase";
 import '../styles/Home.css'
-import background from '../images/CosmicConnectionsSpaceC.png'
+import background from '../images/CosmicConnectionsHomePagewPlaque.png'
 import controls from '../images/CosmicConnectionsControlsC.png'
 import monitor from '../images/CosmicConnectionsMonitorSmall.png'
 import monitorLarge from '../images/CosmicConnectionsMonitorLarge.png'
+import iconMail from '../images/mail.png'
+import iconPencil from '../images/pencil.png'
+import iconCal from '../images/calendar.png'
 import test from '../images/spectralogosolo.png'
 
 class Home extends React.Component {
@@ -50,13 +53,16 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                {/* <img className="bg" id="outside" src={background}></img>
-                <img className="bg" id="controls" src={controls}></img>
+                <img className="bg" id="outside" src={background}></img>
                 <img id="monitor" src={monitor} onClick={this.openMonitor}></img>
                 {
                     this.state.showMonitor ? 
                     <div>
                         <img className="monitorLarge" id="monitorLarge" src={monitorLarge}></img>
+                        <img className="iconPencil" id="iconPencil" src={iconPencil}></img>
+                        <img className="iconMail" id="iconMail" src={iconMail}></img>
+                        <img className="iconCal" id="iconCal" src={iconCal}></img>
+                        {/* <img className="monitorLarge" id="writeMail" src={test} onClick={this.mailEditorOpen} variant="primary">Test MailEditor</img> */}
                     </div>
                     : null
                 }
